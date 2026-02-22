@@ -12,12 +12,13 @@ export const contactDetails = {
   email: "muhammad.umar.official0307@gmail.com",
   linkedin: "https://www.linkedin.com/in/muhammadumarofficial/",
   github: "https://github.com/MUmarOfficial/",
+  whatsapp: "https://wa.me/923448442657",
 };
 
 export const techStack = [
   {
     category: "Languages & Core",
-    tools: ["HTML5", "CSS3", "JavaScript (ES6+)", "TypeScript"],
+    tools: ["HTML5", "CSS3", "JavaScript", "TypeScript"],
   },
   {
     category: "Frontend & UI",
@@ -47,12 +48,12 @@ export const techStack = [
       "GitHub Actions",
       "Vercel",
       "Netlify",
-      "SonarQube",
+      "sonarqube",
     ],
   },
   {
     category: "Code Quality/DX",
-    tools: ["Prettier", "ESLint", "SonarLint"],
+    tools: ["Prettier", "eslint"],
   },
   {
     category: "Design & Build",
@@ -75,6 +76,7 @@ export const projects = [
     testingTools: ["Vitest", "React Testing Library", "Playwright"],
     repo: "https://github.com/MUmarOfficial/react-ai-chatbot",
     live: "https://www.reactaichatbot.live",
+    image: "/src/assets/react-ai-chatbot.png",
   },
   {
     title: "Pizza Lab",
@@ -93,6 +95,7 @@ export const projects = [
     testingTools: ["Playwright"],
     repo: "https://github.com/MUmarOfficial/pizza-lab",
     live: "https://pizza-lab-now.vercel.app/",
+    image: "/src/assets/pizza-lab.png",
   },
   {
     title: "Ruha Water",
@@ -105,10 +108,12 @@ export const projects = [
       "Tailwind CSS v4",
       "Framer Motion",
       "React Router DOM v7",
+      "React Hook Form",
       "EmailJS",
     ],
     repo: "Private",
     live: "https://ruhabeverages.com.pk/",
+    image: "/src/assets/ruha-water.png",
   },
 ];
 
