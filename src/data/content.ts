@@ -2,7 +2,7 @@ export const personalInfo = {
   name: "Muhammad Umar",
   age: 18,
   profession: "Frontend Developer",
-  intro: `I'm a Front End Developer specialized in React, TypeScript, and Tailwind CSS, with a strong focus on automated testing and code quality. my approach emphasizes building fast, reliable, and sharp-looking interfaces that handle real-world demands. I prioritize longevity in design and use automated workflows to ensure faults are caught early and deployments are seamless.`,
+  intro: `I'm a Front End Developer specialized in React, TypeScript, and Tailwind CSS, with a strong focus on automated testing and code quality. My approach emphasizes building fast, reliable, and sharp-looking interfaces that handle real-world demands. I prioritize longevity in design and use automated workflows to ensure faults are caught early and deployments are seamless.`,
 };
 
 export const contactDetails = {
