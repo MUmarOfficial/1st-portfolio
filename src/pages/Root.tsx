@@ -39,11 +39,11 @@ export default function RootLayout() {
             <Beams
                 beamWidth={1}
                 beamHeight={30}
-                beamNumber={20}
-                lightColor="#5227FF"
+                beamNumber={30}
+                lightColor="#9507f4"
                 speed={2}
                 noiseIntensity={1.75}
-                scale={0.2}
+                scale={0.25}
                 rotation={30}
             />
         </div>
