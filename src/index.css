@@ -45,6 +45,10 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -126,5 +130,53 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(82, 39, 255, 0.1) rgba(0, 0, 0, 0.1);
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    cursor: pointer;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(82, 39, 255, 0.1);
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(82, 39, 255, 0.2);
+  }
+
+  ::-webkit-scrollbar-button {
+    display: block;
+    background-repeat: no-repeat;
+    background-size: 8px;
+    background-position: center;
+    height: 16px;
+    cursor: pointer;
+  }
+
+  ::-webkit-scrollbar-button:vertical:start:decrement {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%235227ff'%3E%3Cpath d='M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z'/%3E%3C/svg%3E");
+  }
+
+  ::-webkit-scrollbar-button:vertical:end:increment {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%235227ff'%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z'/%3E%3C/svg%3E");
+  }
+
+  ::-webkit-scrollbar-button:hover {
+    background-color: rgba(82, 39, 255, 0.1);
+  }
+
+  ::-webkit-scrollbar-button:active {
+    background-color: rgba(82, 39, 255, 0.2);
   }
 }

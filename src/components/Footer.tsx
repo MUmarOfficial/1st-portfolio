@@ -42,7 +42,7 @@ const socialLinks = [
 const quickLinks = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
-    { name: "Services", href: "/services" },
+    { name: "Projects", href: "/projects" },
     { name: "Contact", href: "/contact" },
 ];
 
@@ -50,7 +50,7 @@ export default function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="relative bg-black/40 backdrop-blur-md border-t border-white/10 mt-[100vh] z-10">
+        <footer className="relative bg-black/40 backdrop-blur-md border-t border-white/10 mt-20 z-10">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
                     {/* Logo & About Section */}
