@@ -1,4 +1,5 @@
-import { forwardRef, useImperativeHandle, useEffect, useRef, useMemo, FC, ReactNode } from 'react';
+import { forwardRef, useImperativeHandle, useEffect, useRef, useMemo } from 'react';
+import type { FC, ReactNode } from 'react';
 
 import * as THREE from 'three';
 
@@ -6,14 +7,13 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { PerspectiveCamera } from '@react-three/drei';
 import { degToRad } from 'three/src/math/MathUtils.js';
 
-type UniformValue = THREE.IUniform<unknown> | unknown;
-
 interface ExtendMaterialConfig {
   header: string;
   vertexHeader?: string;
   fragmentHeader?: string;
   material?: THREE.MeshPhysicalMaterialParameters & { fog?: boolean };
-  uniforms?: Record<string, UniformValue>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  uniforms?: Record<string, any>;
   vertex?: Record<string, string>;
   fragment?: Record<string, string>;
 }
@@ -32,7 +32,7 @@ function extendMaterial<T extends THREE.Material = THREE.Material>(
 
   const uniforms: Record<string, THREE.IUniform> = THREE.UniformsUtils.clone(baseUniforms);
 
-  const defaults = new BaseMaterial(cfg.material || {}) as T & {
+  const defaults = new BaseMaterial(cfg.material ?? {}) as T & {
     color?: THREE.Color;
     roughness?: number;
     metalness?: number;
@@ -83,9 +83,9 @@ const CanvasWrapper: FC<{ children: ReactNode }> = ({ children }) => (
 
 const hexToNormalizedRGB = (hex: string): [number, number, number] => {
   const clean = hex.replace('#', '');
-  const r = parseInt(clean.substring(0, 2), 16);
-  const g = parseInt(clean.substring(2, 4), 16);
-  const b = parseInt(clean.substring(4, 6), 16);
+  const r = Number.parseInt(clean.substring(0, 2), 16);
+  const g = Number.parseInt(clean.substring(2, 4), 16);
+  const b = Number.parseInt(clean.substring(4, 6), 16);
   return [r / 255, g / 255, b / 255];
 };
 

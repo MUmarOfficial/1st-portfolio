@@ -37,6 +37,16 @@ const socialLinks = [
             </svg>
         ),
     },
+    {
+        name: "Resume",
+        url: "/resume.pdf",
+        download: true,
+        icon: (
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+        ),
+    },
 ];
 
 const quickLinks = [
@@ -96,12 +106,18 @@ export default function Footer() {
                                 <a
                                     key={social.name}
                                     href={social.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-white/70 hover:text-[#5227FF] transition-colors duration-200 cursor-pointer"
+                                    target={social.download ? undefined : "_blank"}
+                                    rel={social.download ? undefined : "noopener noreferrer"}
+                                    download={social.download || undefined}
+                                    className="group relative text-white/70 hover:text-[#5227FF] transition-colors duration-200 cursor-pointer"
                                     aria-label={social.name}
                                 >
                                     {social.icon}
+                                    {social.download && (
+                                        <span className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-[#5227FF] text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                                            {social.name}
+                                        </span>
+                                    )}
                                 </a>
                             ))}
                         </div>

@@ -1,9 +1,11 @@
-import Beams from "@/components/Beams";
+import { lazy, Suspense } from "react";
 import Footer from "@/components/Footer";
 import StaggeredMenu from "@/components/StaggeredMenu";
 import { contactDetails } from "@/data/content";
 import { Outlet } from "react-router";
 import { motion } from "framer-motion";
+
+const Beams = lazy(() => import("@/components/Beams"));
 
 const menuItems = [
     { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
@@ -47,16 +49,18 @@ export default function RootLayout() {
                     transition={{ duration: 1.5 }}
                     className="w-full h-full"
                 >
-                    <Beams
-                        beamWidth={1}
-                        beamHeight={30}
-                        beamNumber={30}
-                        lightColor="#9507f4"
-                        speed={2}
-                        noiseIntensity={1.75}
-                        scale={0.25}
-                        rotation={30}
-                    />
+                    <Suspense fallback={null}>
+                        <Beams
+                            beamWidth={1}
+                            beamHeight={30}
+                            beamNumber={30}
+                            lightColor="#9507f4"
+                            speed={2}
+                            noiseIntensity={1.75}
+                            scale={0.25}
+                            rotation={30}
+                        />
+                    </Suspense>
                 </motion.div>
             </div>
 

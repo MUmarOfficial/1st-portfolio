@@ -1,8 +1,11 @@
+import HowIWork from "@/components/HowIWork";
+import Services from "@/components/Services";
+import ContactCTA from "@/components/ContactCTA";
 import TiltedCard from "@/components/TiltedCard";
 import { personalInfo } from "@/data/content";
 import { motion, useScroll, useTransform, type Variants } from "framer-motion";
 import { useRef } from "react";
-import { ArrowRight, Sparkles, Rocket, Code } from "lucide-react";
+import { ArrowRight, Sparkles, Rocket, Code, Download } from "lucide-react";
 import { Link } from "react-router";
 
 // Smooth easing curve
@@ -273,7 +276,7 @@ const Home = () => {
           {/* CTA Buttons */}
           <motion.div
             variants={scaleIn}
-            className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+            className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center"
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <GlassButton to="/projects" variant="primary">
@@ -291,6 +294,16 @@ const Home = () => {
                 Learn More
               </GlassButton>
             </motion.div>
+            <motion.a
+              href="/resume.pdf"
+              download
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-medium text-sm sm:text-base transition-all duration-300 backdrop-blur-md border overflow-hidden inline-flex items-center gap-2 cursor-pointer bg-[#5227FF]/20 border-[#5227FF]/40 text-white hover:bg-[#5227FF]/40 hover:border-[#5227FF]/60 hover:shadow-[0_0_30px_rgba(82,39,255,0.4)]"
+            >
+              <Download className="w-4 h-4" />
+              Download CV
+            </motion.a>
           </motion.div>
 
           {/* Stats */}
@@ -299,8 +312,8 @@ const Home = () => {
             className="flex gap-6 sm:gap-8 mt-8 sm:mt-12 justify-center lg:justify-start"
           >
             {[
-              { label: "Projects", value: "10+" },
-              { label: "Technologies", value: "20+" },
+              { label: "Projects", value: "5+" },
+              { label: "Technologies", value: "30+" },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -380,6 +393,15 @@ const Home = () => {
         </motion.div>
         <span className="text-white/30 text-[10px] sm:text-xs uppercase tracking-widest">Scroll</span>
       </motion.div>
+
+      {/* Services Section */}
+      <Services />
+
+      {/* How I Work Section */}
+      <HowIWork />
+
+      {/* Contact CTA Section */}
+      <ContactCTA />
     </div>
   );
 };
