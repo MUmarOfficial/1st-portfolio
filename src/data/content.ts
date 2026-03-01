@@ -91,7 +91,7 @@ export const projects = [
     testingTools: ["Vitest", "React Testing Library", "Playwright"],
     repo: "https://github.com/MUmarOfficial/react-ai-chatbot",
     live: "https://www.reactaichatbot.live",
-    image: "/src/assets/react-ai-chatbot.png",
+    image: "/assets/react-ai-chatbot.png",
     accent: "#5227FF",
   },
   {
@@ -118,7 +118,7 @@ export const projects = [
     testingTools: ["Playwright"],
     repo: "https://github.com/MUmarOfficial/pizza-lab",
     live: "https://pizza-lab-now.vercel.app/",
-    image: "/src/assets/pizza-lab.png",
+    image: "/assets/pizza-lab.png",
     accent: "#e05a2b",
   },
   {
@@ -144,7 +144,7 @@ export const projects = [
     ],
     repo: "Private",
     live: "https://ruhabeverages.com.pk/",
-    image: "/src/assets/ruha-water.png",
+    image: "/assets/ruha-water.png",
     accent: "#0ea5e9",
   },
 ];
