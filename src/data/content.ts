@@ -278,11 +278,11 @@ export const howIWorkSteps = [
     description:
       "Building robust and scalable solutions with modern technologies.",
     details: [
-      "Frontend development",
-      "Backend implementation",
-      "Database integration",
-      "API development",
-      "Code optimization",
+      "React & TypeScript development",
+      "Component-based architecture",
+      "State management setup",
+      "Automated testing integration",
+      "Performance optimization",
     ],
     color: "from-[#c084fc] to-[#e879f9]",
   },
